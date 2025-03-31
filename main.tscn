@@ -1,3 +1,25 @@
-[gd_scene format=3 uid="uid://bl1e5f3nl3umf"]
+[gd_scene load_steps=4 format=3 uid="uid://bl1e5f3nl3umf"]
+
+[ext_resource type="PackedScene" uid="uid://bhkn6wvs4i3op" path="res://leo/player.tscn" id="1_kthqe"]
+[ext_resource type="Texture2D" uid="uid://ck30d07p6bfr1" path="res://leo/Great_white_shark_south_africa.jpg" id="2_syekc"]
+[ext_resource type="Script" path="res://plast_spawner.gd" id="3_0s14y"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_kthqe")]
+position = Vector2(290, 313)
+
+[node name="GreatWhiteSharkSouthAfrica" type="Sprite2D" parent="."]
+position = Vector2(54, 360)
+scale = Vector2(0.380845, 0.380845)
+texture = ExtResource("2_syekc")
+
+[node name="plast_spawner" type="Node2D" parent="."]
+position = Vector2(1162, 313)
+script = ExtResource("3_0s14y")
+
+[node name="Timer" type="Timer" parent="plast_spawner"]
+process_callback = 0
+autostart = true
+
+[connection signal="timeout" from="plast_spawner/Timer" to="plast_spawner" method="_on_timer_timeout"]
