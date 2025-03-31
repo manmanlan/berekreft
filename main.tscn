@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl1e5f3nl3umf"]
+[gd_scene load_steps=5 format=3 uid="uid://bl1e5f3nl3umf"]
 
 [ext_resource type="PackedScene" uid="uid://bhkn6wvs4i3op" path="res://leo/player.tscn" id="1_kthqe"]
 [ext_resource type="Texture2D" uid="uid://ck30d07p6bfr1" path="res://leo/Great_white_shark_south_africa.jpg" id="2_syekc"]
 [ext_resource type="Script" path="res://plast_spawner.gd" id="3_0s14y"]
+[ext_resource type="Texture2D" uid="uid://ivsmqtu2p5dv" path="res://maaax/db620c66-63b5-406b-8561-d3a3e68275a8 [Converted].jpg" id="4_wiaup"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -21,5 +22,22 @@ script = ExtResource("3_0s14y")
 [node name="Timer" type="Timer" parent="plast_spawner"]
 process_callback = 0
 autostart = true
+
+[node name="Node2D" type="Node2D" parent="."]
+z_index = -1
+position = Vector2(425, 4)
+
+[node name="Parallax2D" type="Parallax2D" parent="Node2D"]
+texture_repeat = 3
+scale = Vector2(-1, 1)
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(2400, 0)
+autoscroll = Vector2(-500, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D"]
+texture_repeat = 3
+position = Vector2(-565, 332)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_wiaup")
 
 [connection signal="timeout" from="plast_spawner/Timer" to="plast_spawner" method="_on_timer_timeout"]
