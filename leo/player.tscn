@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhkn6wvs4i3op"]
+[gd_scene load_steps=4 format=3 uid="uid://cut163m81vvbl"]
 
 [ext_resource type="Script" path="res://leo/player.gd" id="1_gn4cc"]
 [ext_resource type="Texture2D" uid="uid://bscewp4ojsxbk" path="res://leo/fisk.jpg" id="2_wqi0h"]
