@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwogl80vsu40q"]
+
+[ext_resource type="Texture2D" uid="uid://ivsmqtu2p5dv" path="res://maaax/db620c66-63b5-406b-8561-d3a3e68275a8 [Converted].jpg" id="1_1f76o"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+texture_repeat = 3
+scale = Vector2(-1, 1)
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(2400, 0)
+autoscroll = Vector2(-800, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture_repeat = 3
+position = Vector2(-565, 332)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_1f76o")
