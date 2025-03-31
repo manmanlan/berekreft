@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl1e5f3nl3umf"]
+[gd_scene load_steps=6 format=3 uid="uid://bl1e5f3nl3umf"]
 
-[ext_resource type="PackedScene" uid="uid://bhkn6wvs4i3op" path="res://leo/player.tscn" id="1_kthqe"]
+[ext_resource type="PackedScene" uid="uid://cut163m81vvbl" path="res://leo/player.tscn" id="1_kthqe"]
 [ext_resource type="Texture2D" uid="uid://ck30d07p6bfr1" path="res://leo/Great_white_shark_south_africa.jpg" id="2_syekc"]
 [ext_resource type="Script" path="res://plast_spawner.gd" id="3_0s14y"]
 [ext_resource type="Texture2D" uid="uid://ivsmqtu2p5dv" path="res://maaax/db620c66-63b5-406b-8561-d3a3e68275a8 [Converted].jpg" id="4_wiaup"]
+[ext_resource type="AudioStream" uid="uid://bexbc2kgro1d" path="res://maaax/Underwater Theme - New Super Mario Bros. Wii.mp3" id="5_m3r5e"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -39,5 +40,9 @@ texture_repeat = 3
 position = Vector2(-565, 332)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_wiaup")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_m3r5e")
+autoplay = true
 
 [connection signal="timeout" from="plast_spawner/Timer" to="plast_spawner" method="_on_timer_timeout"]

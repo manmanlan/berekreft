@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcdcmwe62cxu"]
+[gd_scene load_steps=4 format=3 uid="uid://biltw0sdff82q"]
 
 [ext_resource type="Texture2D" uid="uid://cpvqv1t3tn7wi" path="res://leo/plast.webp" id="1_fj2oi"]
 [ext_resource type="Script" path="res://leo/plast.gd" id="1_tmhku"]
