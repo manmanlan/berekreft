@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cut163m81vvbl"]
 
 [ext_resource type="Script" path="res://leo/player.gd" id="1_gn4cc"]
-[ext_resource type="Texture2D" uid="uid://bscewp4ojsxbk" path="res://leo/fisk.jpg" id="2_wqi0h"]
+[ext_resource type="Texture2D" uid="uid://xrmla0ak8gg4" path="res://leo/fisk.png" id="2_gwjjy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8jjk"]
 size = Vector2(118, 62)
@@ -12,10 +12,9 @@ motion_mode = 1
 script = ExtResource("1_gn4cc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(45, 0)
+position = Vector2(10, 1)
 shape = SubResource("RectangleShape2D_h8jjk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(45, 3.8147e-06)
-scale = Vector2(0.0599251, 0.0599251)
-texture = ExtResource("2_wqi0h")
+scale = Vector2(0.0374718, 0.0374718)
+texture = ExtResource("2_gwjjy")
