@@ -9,7 +9,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_kthqe")]
-position = Vector2(290, 313)
+position = Vector2(310, 313)
 
 [node name="GreatWhiteSharkSouthAfrica" type="Sprite2D" parent="."]
 position = Vector2(54, 360)
