@@ -7,4 +7,10 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	get_tree().reload_current_scene()
+	if body.name == "hai" or body.name == "kraken":
+		if body.has_method("take_damage"):
+			body.take_damage(1)
+			queue_free()
+	else:
+		body.die()
+		queue_free()

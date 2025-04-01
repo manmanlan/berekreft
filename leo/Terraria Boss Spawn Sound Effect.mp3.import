@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d16qc40wjy67x"
+path="res://.godot/imported/Terraria Boss Spawn Sound Effect.mp3-e7439fd8a62af4a2beafa731548b2803.mp3str"
+
+[deps]
+
+source_file="res://leo/Terraria Boss Spawn Sound Effect.mp3"
+dest_files=["res://.godot/imported/Terraria Boss Spawn Sound Effect.mp3-e7439fd8a62af4a2beafa731548b2803.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

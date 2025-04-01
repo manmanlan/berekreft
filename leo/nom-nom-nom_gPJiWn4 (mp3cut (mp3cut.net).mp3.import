@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b42nltave1w34"
+path="res://.godot/imported/nom-nom-nom_gPJiWn4 (mp3cut (mp3cut.net).mp3-e5faf0babfffcd4d9921f87f0f4e81b2.mp3str"
+
+[deps]
+
+source_file="res://leo/nom-nom-nom_gPJiWn4 (mp3cut (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/nom-nom-nom_gPJiWn4 (mp3cut (mp3cut.net).mp3-e5faf0babfffcd4d9921f87f0f4e81b2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

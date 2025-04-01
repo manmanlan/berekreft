@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cut163m81vvbl"]
+[gd_scene load_steps=6 format=3 uid="uid://cut163m81vvbl"]
 
 [ext_resource type="Script" path="res://leo/player.gd" id="1_gn4cc"]
 [ext_resource type="Texture2D" uid="uid://xrmla0ak8gg4" path="res://leo/fisk.png" id="2_gwjjy"]
+[ext_resource type="VideoStream" path="res://leo/Xplosion.ogv" id="3_4xsld"]
+[ext_resource type="AudioStream" uid="uid://c8tiyhffutvdk" path="res://leo/roblox-explosion-sound.mp3" id="4_jt2ld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8jjk"]
 size = Vector2(118, 62)
@@ -18,3 +20,18 @@ shape = SubResource("RectangleShape2D_h8jjk")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.0374718, 0.0374718)
 texture = ExtResource("2_gwjjy")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+z_index = 3
+offset_left = -96.0
+offset_top = -61.0
+offset_right = 624.0
+offset_bottom = 435.0
+scale = Vector2(0.28, 0.28)
+stream = ExtResource("3_4xsld")
+
+[node name="Roblox-explosion-sound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(119, 109)
+stream = ExtResource("4_jt2ld")
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

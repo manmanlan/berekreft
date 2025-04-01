@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://cr4lij0u2fxp8"]
+
+[ext_resource type="Script" path="res://leo/kraken.gd" id="1_2bkiy"]
+[ext_resource type="Texture2D" uid="uid://clrcsdccgb80a" path="res://leo/Kraken Physiology _ Superpower Wiki _ Fandom.jpg" id="2_66ik4"]
+[ext_resource type="AudioStream" uid="uid://b42nltave1w34" path="res://leo/nom-nom-nom_gPJiWn4 (mp3cut (mp3cut.net).mp3" id="3_c4ugk"]
+[ext_resource type="AudioStream" uid="uid://d16qc40wjy67x" path="res://leo/Terraria Boss Spawn Sound Effect.mp3" id="4_fish6"]
+[ext_resource type="AudioStream" uid="uid://dw0yor3hprp20" path="res://leo/Terraria Calamity Mod Music - corrosion! - Theme of the Acid Rain.mp3" id="5_5kt3s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27wmf"]
+size = Vector2(105, 605)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uh8wl"]
+bg_color = Color(0.454524, 0.454524, 0.454524, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5iqk"]
+bg_color = Color(0.968587, 5.67943e-06, 7.70092e-07, 1)
+
+[node name="kraken" type="StaticBody2D"]
+visible = false
+collision_layer = 0
+script = ExtResource("1_2bkiy")
+
+[node name="GreatWhiteSharkSouthAfrica" type="Sprite2D" parent="."]
+position = Vector2(110.937, 346.5)
+scale = Vector2(0.760422, 3.56548)
+texture = ExtResource("2_66ik4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(168, 340.5)
+shape = SubResource("RectangleShape2D_27wmf")
+
+[node name="bossbar" type="ProgressBar" parent="."]
+offset_left = 20.0
+offset_top = 18.0
+offset_right = 1137.0
+offset_bottom = 45.0
+theme_override_styles/background = SubResource("StyleBoxFlat_uh8wl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_c5iqk")
+show_percentage = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_c4ugk")
+volume_db = -8.432
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 6.0
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fish6")
+volume_db = 10.307
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5kt3s")
+volume_db = 10.307

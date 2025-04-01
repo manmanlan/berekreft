@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dw0yor3hprp20"
+path="res://.godot/imported/Terraria Calamity Mod Music - corrosion! - Theme of the Acid Rain.mp3-b2e2dd3b63991aef04016c825ff3f3c7.mp3str"
+
+[deps]
+
+source_file="res://leo/Terraria Calamity Mod Music - corrosion! - Theme of the Acid Rain.mp3"
+dest_files=["res://.godot/imported/Terraria Calamity Mod Music - corrosion! - Theme of the Acid Rain.mp3-b2e2dd3b63991aef04016c825ff3f3c7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

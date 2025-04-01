@@ -2,7 +2,7 @@ extends Node2D
 
 const PLAST = preload("res://leo/plast.tscn")
 
-var increasing_speed=0
+var increasing_speed=0.9
 
 
 func _on_timer_timeout() -> void:
@@ -21,3 +21,7 @@ func _on_timer_timeout() -> void:
 	else:
 		# Action for ran == 3
 		plast_temp.position.y=-140
+
+
+func _on_video_stream_player_finished() -> void:
+	$"../AudioStreamPlayer3".play()
