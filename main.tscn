@@ -1,20 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl1e5f3nl3umf"]
+[gd_scene load_steps=16 format=3 uid="uid://bl1e5f3nl3umf"]
 
 [ext_resource type="PackedScene" uid="uid://cut163m81vvbl" path="res://leo/player.tscn" id="1_kthqe"]
 [ext_resource type="Texture2D" uid="uid://ck30d07p6bfr1" path="res://leo/Great_white_shark_south_africa.jpg" id="2_syekc"]
 [ext_resource type="Script" path="res://plast_spawner.gd" id="3_0s14y"]
+[ext_resource type="Texture2D" uid="uid://cwoq425gr6fml" path="res://leo/db620c66-63b5-40226b-8561-d3a3e68275a8 [Converted].jpg" id="3_2423s"]
 [ext_resource type="Texture2D" uid="uid://ivsmqtu2p5dv" path="res://maaax/db620c66-63b5-406b-8561-d3a3e68275a8 [Converted].jpg" id="4_wiaup"]
+[ext_resource type="Script" path="res://sprite_2d.gd" id="5_7dfbr"]
 [ext_resource type="AudioStream" uid="uid://bexbc2kgro1d" path="res://maaax/Underwater Theme - New Super Mario Bros. Wii.mp3" id="5_m3r5e"]
+[ext_resource type="Script" path="res://hai.gd" id="5_rajat"]
+[ext_resource type="AudioStream" uid="uid://b42nltave1w34" path="res://leo/nom-nom-nom_gPJiWn4 (mp3cut (mp3cut.net).mp3" id="7_6jn02"]
+[ext_resource type="VideoStream" path="res://leo/Xplosion.ogv" id="8_hreou"]
+[ext_resource type="AudioStream" uid="uid://c8tiyhffutvdk" path="res://leo/roblox-explosion-sound.mp3" id="9_6drvj"]
+[ext_resource type="AudioStream" uid="uid://urip80qiafx8" path="res://leo/victory_sJDDywi.mp3" id="10_hpbeg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27wmf"]
+size = Vector2(105, 605)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uh8wl"]
+bg_color = Color(0.454524, 0.454524, 0.454524, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5iqk"]
+bg_color = Color(0.968587, 5.67943e-06, 7.70092e-07, 1)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_kthqe")]
 position = Vector2(310, 313)
-
-[node name="GreatWhiteSharkSouthAfrica" type="Sprite2D" parent="."]
-position = Vector2(54, 360)
-scale = Vector2(0.380845, 0.380845)
-texture = ExtResource("2_syekc")
 
 [node name="plast_spawner" type="Node2D" parent="."]
 position = Vector2(1162, 313)
@@ -35,14 +46,60 @@ scroll_scale = Vector2(0, 0)
 repeat_size = Vector2(2400, 0)
 autoscroll = Vector2(-500, 0)
 
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/Parallax2D"]
+texture_repeat = 3
+position = Vector2(-565, 332)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_2423s")
+
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D"]
 texture_repeat = 3
 position = Vector2(-565, 332)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_wiaup")
+script = ExtResource("5_7dfbr")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="hai" type="StaticBody2D" parent="."]
+script = ExtResource("5_rajat")
+
+[node name="GreatWhiteSharkSouthAfrica" type="Sprite2D" parent="hai"]
+position = Vector2(54, 348.5)
+scale = Vector2(0.380845, 0.906486)
+texture = ExtResource("2_syekc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hai"]
+position = Vector2(168, 340.5)
+shape = SubResource("RectangleShape2D_27wmf")
+
+[node name="bossbar" type="ProgressBar" parent="hai"]
+offset_left = 20.0
+offset_top = 18.0
+offset_right = 1137.0
+offset_bottom = 45.0
+theme_override_styles/background = SubResource("StyleBoxFlat_uh8wl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_c5iqk")
+show_percentage = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="hai"]
+stream = ExtResource("7_6jn02")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="hai"]
 stream = ExtResource("5_m3r5e")
 autoplay = true
 
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -117.0
+offset_top = 44.0
+offset_right = 603.0
+offset_bottom = 665.0
+scale = Vector2(0.440001, 1)
+stream = ExtResource("8_hreou")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_6drvj")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_hpbeg")
+
 [connection signal="timeout" from="plast_spawner/Timer" to="plast_spawner" method="_on_timer_timeout"]
+[connection signal="finished" from="VideoStreamPlayer" to="plast_spawner" method="_on_video_stream_player_finished"]
